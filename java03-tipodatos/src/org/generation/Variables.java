@@ -1,0 +1,150 @@
+package org.generation;
+
+public class Variables {
+
+	public static void main(String[] args) {
+		/*
+		 * Reglas para el nombre de las variables:
+		 * - Se distingue entre minúsculas y mayúsculas
+		 * - La longitud del nombre es ilimitada
+		 * - Puedes utilizar cualquier caracter Unicode
+		 * - La variable puede comenzar:
+		 *  > Una letra ej. miVariable
+		 *  > signo de dolar $miVariable
+		 *  > Caracter de subrayado _miVariable
+		 * 
+		 */
+		
+		/*int $myVar; es válido, pero no se recomienda
+		int _myVar; es válido, pero no se recomienda
+		//int #myVar; // no es válido.
+		int myVarEspañol; // es válido, pero no se recomienda, de preferencia nombres en ingles
+		// int 5comentarios; // no es válido, no se puede comenzar con un número
+		int sinC0m3nt4r10s; // es válido
+		*/
+		/*
+		 * En Java tendremos los siguientes tipo de variables:
+		 * Variables de instancia (Non static fields): atributos de los objetos.
+		 * Variables de clase (Static Fields): atributos de la clase.
+		 * Variables locales (Local variables): variable dentro de las funciones(métodos)
+		 * Parámetros (parameters): Entrada de las funciones
+		 * 
+		 */
+	/**
+	 * Tipos de datos en Java
+	 * - Objetos
+	 * - Datos primitivos
+	 *     8 datos primitivos:
+	 *     >byte
+	 *     >shorte
+	 *     >int
+	 *     >long
+	 *     >float
+	 *     >double
+	 *     >boolean
+	 *     >char
+	 *     
+	 */
+		
+    // el tipo byte es de 8 bits, almacena datos numéricos enteros.
+		byte myVarByte = 12;
+		System.out.println("byte: " + myVarByte);
+	// 2^8 = 256
+	// Obtener el valor máximo y mínimo del tipo byte, usando wrapper (Clase envolvente) Byte.
+			System.out.println("Byte, Max value: " + Byte.MAX_VALUE);
+			System.out.println("Byte, Min value: " + Byte.MIN_VALUE);
+			
+	// El tipo short es de 16 bits, almacena datos numéricos enteros.
+	// 2^16 = 65536
+			short myVarShort = 500;
+			System.out.println("short: " + myVarShort);
+			System.out.println("Short, Max value: " + Short.MAX_VALUE);
+			System.out.println("Short, Min value: " + Short.MIN_VALUE);
+			
+	// El tipo int es de 32 bits, almacena datos numéricos enteros.
+	// 2^32 = 2147483647
+			int myVarInt = 1000;
+			System.out.println("int: " + myVarInt);
+			// El wrapper int -> Integer
+			System.out.println("Integer, Max value: " + Integer.MAX_VALUE);
+			System.out.println("Integer, Min value: " + Integer.MIN_VALUE);
+			
+	// El tipo int es de 64 bits, almacena datos numéricos enteros.
+	// 2^64 = 9223372036854775807
+			long myVarLong = 1500;
+			System.out.println("long: " + myVarLong);
+			System.out.println("Long, Max value: " + Long.MAX_VALUE);
+			System.out.println("Long, Min value: " + Long.MIN_VALUE);
+			
+	//----------------------------------------------------------------
+	// El tipo float es de 32 bits, almacena datos numericos de punto flotante (real).
+			float myVarFloat = 1500.6523F;
+			System.out.println("float: " + myVarFloat);
+			System.out.println("Float, Max value: " + Float.MAX_VALUE);
+			System.out.println("Float, Min value: " + Float.MIN_VALUE);
+			
+	// Las literales numéricas enteras son de tipo int.
+	// Las literales numericas de punto flotante son de tipo double.
+	// Para indica una literal numerica de tipo long, hay que indicar la literal con la letra l o L(preferente en mayuscula).
+			long myLiteralLong = 2147483648L;
+	// Para indicar una literal numérica de tipo float, hay que indicar la literal con la letra f.
+			
+	// El tipo double es de 64 bits, almacena datos de punto flotante
+			double myVarDouble = 1500.6523;
+			System.out.println("double: " + myVarDouble);
+			System.out.println("Double, Max value: " + Double.MAX_VALUE);
+			System.out.println("Double, Min value: " + Double.MIN_VALUE);
+			
+	//----------------------------------------------------------------
+	// El tipo boolean solo almacena calores true o false
+	   boolean myVarBoolean = true;
+	   
+	// El tipo char solo almacena un caracter, se debe definir la literal entre apostrofes, ej. 'a'
+	// Solo almacena caracteres de la tabla unicode(16 bits), puede almacenar del 0 al 65535.
+	   
+	   char losPandillerosDeLaTarde = 'I';
+	   System.out.println("char: " + losPandillerosDeLaTarde);
+	// Podemos deifnir un char por su codigo unicode o sus valores numericos.
+	   char letraL = '\u004C'; // L
+	   System.out.println("La letra L: " + letraL);
+	   char letraM = 77; // L
+	   System.out.println("La letra M: " + letraM);
+	   
+	// ---------------------------------------------------------------
+	// Formas de representar un numero
+	// Representacion decimal
+	   System.out.println("Representacion decimal: " + 26);
+	   System.out.println("Representacion hexadecimal: " + 0x1a);
+	   System.out.println("Representacion binaria: " + 0b11010);
+	// Para las literales numéricas se puede usar el guion bajo _ ára separar numeros
+	// No se puede escribir _ al inicio final de la literal
+	// No se puede escribir _ junto a un punto decimal
+	// No se puede escribir _ antes de la F o L
+	   int numeroSeparados = 12_345;
+	   float numerosFlotalSeparados = 12_345.456_346F;
+	
+	// -----------------------------------------------------------------
+	// Conversión de tipos de datos
+	   byte coquita600ml = 60;
+	   // upcasting
+	   short coquita200ml = coquita600ml;
+	   // downcasting
+	   short pozoleGrande1L = 259;
+	   byte pozoleBurbuja = (byte) pozoleGrande1L;
+	   System.out.println("Pozole burbuja: " + pozoleBurbuja);
+	   
+	// ----------------------------------------------------------------
+	// Objetos de tipo String.
+	// Se define entre comillas dobles.
+	// Si deseas imprimir comillas dobles en el mensaje, se usa el caracter de escape \
+	// \b (backspace), \t (tab), \n (line feed), \f (form feed), \r (carriage return), 
+	// \" (double quote), \' (single quote), and \\ (backslash).
+
+	   String myVarString = "Holi \"Crayoli\"";
+	   System.out.println("Mensaje string: " + myVarString);
+
+	}
+	
+	
+
+}
